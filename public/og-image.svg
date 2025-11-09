@@ -1,0 +1,137 @@
+<!-- OG Social Card · 1200×630 · Emoji + padded URL -->
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Rollkunstlauf · Ranking Calculator — Social Preview</title>
+  <desc id="desc">Dark iridescent card with a luminous ring, roller-skate emoji, bold headline, and a padded glass URL badge.</desc>
+
+  <defs>
+    <!-- Backdrop -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1025"/>
+      <stop offset="1" stop-color="#2B2A6A"/>
+    </linearGradient>
+
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="40%" r="70%">
+      <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+    </radialGradient>
+
+    <!-- Iridescent spectrum -->
+    <linearGradient id="iridescent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF3B3B"/>
+      <stop offset="0.16" stop-color="#FF9F1C"/>
+      <stop offset="0.34" stop-color="#F7F14A"/>
+      <stop offset="0.54" stop-color="#2CF2AE"/>
+      <stop offset="0.72" stop-color="#1C7FFF"/>
+      <stop offset="0.86" stop-color="#B021FF"/>
+      <stop offset="1" stop-color="#FF3B9D"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0.4  0 0 0 0 0.45  0 0 0 0 1  0 0 0 0.9 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Ring glow (sharper) -->
+    <filter id="ringGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Subtle grain -->
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="3" stitchTiles="stitch" seed="7"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.015"/></feComponentTransfer>
+    </filter>
+
+    <!-- Shine sweep -->
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Micro-blur for stripes -->
+    <filter id="stripeBlur"><feGaussianBlur stdDeviation="0.6"/></filter>
+
+    <!-- Typography helpers -->
+    <style>
+      .ui { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      text { paint-order: stroke fill; }
+      .headline-stroke { stroke: rgba(0,0,0,0.5); stroke-width: 4; }
+      .sub-stroke { stroke: rgba(0,0,0,0.45); stroke-width: 3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" filter="url(#grain)"/>
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <!-- Motion stripes (softer to avoid moiré) -->
+  <g opacity="0.04" filter="url(#stripeBlur)">
+    <rect x="-160" y="-40" width="260" height="900" transform="rotate(25 0 0)" fill="#fff"/>
+    <rect x="160"  y="-40" width="260" height="900" transform="rotate(25 0 0)" fill="#fff"/>
+    <rect x="480"  y="-40" width="260" height="900" transform="rotate(25 0 0)" fill="#fff"/>
+    <rect x="800"  y="-40" width="260" height="900" transform="rotate(25 0 0)" fill="#fff"/>
+  </g>
+
+  <!-- Iridescent halo ring -->
+  <g transform="translate(600 268)">
+    <circle r="148" fill="none" stroke="url(#iridescent)" stroke-width="12" opacity="0.42" filter="url(#ringGlow)"/>
+    <circle r="126" fill="none" stroke="url(#iridescent)" stroke-width="4" opacity="0.65"/>
+    <circle r="114" fill="url(#iridescent)" fill-opacity="0.12"/>
+  </g>
+
+  <!-- Central icon: emoji, centered and glowing -->
+  <g filter="url(#glow)">
+    <text x="600" y="315"
+          text-anchor="middle"
+          font-size="140"
+          class="ui"
+          stroke="rgba(0,0,0,.45)"
+          stroke-width="6">
+      🛼
+    </text>
+  </g>
+
+  <!-- Shine swash -->
+  <rect x="-150" y="-120" width="1500" height="300" fill="url(#shine)" transform="rotate(-12 0 0)" opacity="0.55"/>
+
+  <!-- Headline -->
+  <text x="600" y="406" text-anchor="middle" class="ui headline-stroke"
+        font-size="72" font-weight="900" letter-spacing="1.2" fill="url(#iridescent)">
+    ROLLKUNSTLAUF
+  </text>
+
+  <!-- Subheadline (higher contrast) -->
+  <text x="600" y="468" text-anchor="middle" class="ui sub-stroke"
+        font-size="52" font-weight="800" fill="#EEF2FF" opacity="0.98" letter-spacing="1">
+    RANKING CALCULATOR
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="520" text-anchor="middle" class="ui"
+        font-size="32" font-weight="500" fill="#C8D0F8" opacity="0.9">
+    Majority Voting • Not Score Sums
+  </text>
+
+  <!-- URL badge (wider for horizontal padding) -->
+  <g transform="translate(450 545)">
+    <rect width="300" height="50" rx="25" fill="#FFFFFF" fill-opacity="0.1" stroke="#7C83FF" stroke-width="1.2"/>
+    <rect width="300" height="50" rx="25" fill="url(#shine)" opacity="0.6"/>
+    <text x="150" y="33" text-anchor="middle" class="mono" font-size="22"
+          fill="#B8C0FF" stroke="rgba(0,0,0,.35)" stroke-width="1">
+      rollkunstlauf.party
+    </text>
+  </g>
+
+  <!-- Safe crop guides (hidden; toggle to debug)
+  <g opacity="0.0">
+    <rect x="60" y="60" width="1080" height="510" fill="none" stroke="#00FFC2" stroke-dasharray="6 8"/>
+  </g> -->
+</svg>
